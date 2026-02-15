@@ -1,0 +1,23 @@
+---
+
+---
+
+<script type="module">
+  const btn = document.getElementById('theme-toggle');
+
+  // Load saved theme from localStorage
+  if (localStorage.getItem('theme') === 'dark') {
+    document.documentElement.classList.add('dark');
+  }
+
+  btn.addEventListener('click', () => {
+    document.documentElement.classList.toggle('dark');
+
+    // Save preference
+    if (document.documentElement.classList.contains('dark')) {
+      localStorage.setItem('theme', 'dark');
+    } else {
+      localStorage.setItem('theme', 'light');
+    }
+  });
+</script>

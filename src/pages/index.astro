@@ -1,11 +1,37 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
+import Layout from "../components/Layout.astro";
+import ProjectCard from "../components/ProjectCard.astro";
+import { getCollection } from "astro:content";
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+const projects = await getCollection("projects");
+
+const featured = projects
+  .filter((project) => project.data.featured === true)
+  .sort((a, b) => {
+    // Fallback to 999 so unranked projects appear last
+    const importanceA = a.data.importance ?? 999; 
+    const importanceB = b.data.importance ?? 999;
+    
+    return importanceA - importanceB; // 1 (A) comes before 2 (B)
+  })
+  .slice(0, 3);
 ---
 
-<Layout>
-	<Welcome />
+<Layout title="Home | Nathan Wu">
+  <section class="hero">
+    <h1>Nathan Wu</h1>
+    <p class="subtitle">Electrical Engineering Student</p>
+    <p>FPGA • Embedded Systems • Hardware Design</p>
+    <a href="/projects" class="btn">View Projects</a>
+  </section>
+
+  <section>
+    <h2>Featured Projects</h2>
+
+    <div class="project-grid">
+      {featured.map((project) => (
+		<ProjectCard {...project.data} slug={project.slug} />
+))}
+    </div>
+  </section>
 </Layout>

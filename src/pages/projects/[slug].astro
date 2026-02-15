@@ -1,0 +1,41 @@
+---
+import Layout from "../../components/Layout.astro";
+import { getCollection } from "astro:content";
+import type { CollectionEntry } from "astro:content";
+
+type ProjectEntry = CollectionEntry<"projects">;
+
+export async function getStaticPaths() {
+  const projects = await getCollection("projects");
+
+  return projects.map((project) => ({
+    params: { slug: project.slug },
+    props: { project },
+  }));
+}
+
+interface Props {
+  project: ProjectEntry;
+}
+
+const { project } = Astro.props as Props;
+
+// THIS LINE IS CRUCIAL
+const { Content } = await project.render();
+---
+
+<Layout title={`${project.data.title} | Nathan Wu`}>
+  <h1>{project.data.title}</h1>
+  <p>{project.data.description}</p>
+
+  <div class="tech-list">
+    {project.data.tech.map((item) => (
+      <span class="tech">{item}</span>
+    ))}
+  </div>
+
+  <!-- THIS IS WHAT RENDERS THE MARKDOWN BODY -->
+  <article class="project-content">
+    <Content />
+  </article>
+</Layout>

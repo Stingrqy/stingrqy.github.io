@@ -1,0 +1,25 @@
+---
+import Navbar from "./Navbar.astro";
+import Footer from "./Footer.astro";
+import ThemeToggle from '../components/ThemeToggle.astro';
+
+const { title = "Nathan Wu | Portfolio" } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <link rel="stylesheet" href="/src/styles/global.css" />
+  </head>
+  <body>
+    <Navbar />
+    <ThemeToggle />
+    <main class="container">
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>

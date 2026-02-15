@@ -1,0 +1,19 @@
+---
+import Layout from "../components/Layout.astro";
+import ProjectCard from "../components/ProjectCard.astro";
+import { getCollection } from "astro:content";
+import type { CollectionEntry } from "astro:content";
+
+const projects: CollectionEntry<"projects">[] =
+  await getCollection("projects");
+---
+
+<Layout title="Projects | Nathan Wu">
+  <h1>Projects</h1>
+
+  <div class="project-grid">
+    {projects.map((project) => (
+      <ProjectCard {...project.data} slug={project.slug} />
+    ))}
+  </div>
+</Layout>
