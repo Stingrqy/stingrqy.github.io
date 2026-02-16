@@ -1,6 +1,6 @@
 ---
 title: "Maskless DLP Lithography Stepper"
-description: "Worked on making FPGA modules for reading camera data from SPI and transmitting to a DLPC chip, additionally generating PWM commands for the stepper"
+description: "Working on making FPGA modules for reading camera data from SPI and transmitting to a DLPC chip, additionally generating PWM commands for the stepper"
 tech: ["Verilog", "FPGA", "Stepper Motors", "SPI", "Digital Design"]
 github: "https://github.com/..."
 ---
