@@ -7,4 +7,4 @@ github: "https://github.com/..."
 
 ## Overview
 
-Will add this soon!
+Will add this soon! It's already completed, just gotta transcribe everything from my google doc

@@ -28,13 +28,13 @@ This was mostly just a learning project using Phil's Lab's <a href="https://www.
 I used hierarchical schematic sheets for easy organization of each component, such as for power, LEDs, and the microcontroller itself. Other than the logic shifter, and LEDs, all components were picked following the tutorial.
 
 ### Schematic
-Schematic image goes here
+I will put the schematic screenshots by the end of 2/27!
 
 #### Considerations & Things I Learned
 - Most parts have lots of calculations done out for you, and also example schematics
 
 ### PCB Layout
-Layout image goes here
+Same as schematic screenshots
 
 #### Considerations & Things I Learned
 - Buck converter layout and routing is very strict, and their datasheet usually provides the best layout
