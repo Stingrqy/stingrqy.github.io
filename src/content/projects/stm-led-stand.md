@@ -30,12 +30,14 @@ I used hierarchical schematic sheets for easy organization of each component, su
 ### Schematic
 
 <img src="/images/ledStand/LEDStandMain.png" alt="Main Schematic">
-<img src="/images/ledStand/LEDStandMCU.png" alt="MCU Schematic">
 <img src="/images/ledStand/LEDStandPowerSch.png" alt="Power Schematic">
+<img src="/images/ledStand/LEDStandMCU.png" alt="MCU Schematic">
 <img src="/images/ledStand/LEDStandLEDSch.png" alt="Neopixel Schematic">
 
 #### Considerations & Things I Learned
 - Most parts have lots of calculations done out for you, and also example schematics
+- It would be better to include calculations of important component values, I didn't include them since I was just following the tutorial and the only new thing was decoupling caps for the LEDs
+- Hierarchical sheets are great
 
 ### PCB Layout
 
