@@ -28,13 +28,18 @@ This was mostly just a learning project using Phil's Lab's <a href="https://www.
 I used hierarchical schematic sheets for easy organization of each component, such as for power, LEDs, and the microcontroller itself. Other than the logic shifter, and LEDs, all components were picked following the tutorial.
 
 ### Schematic
-I will put the schematic screenshots by the end of 2/27!
+
+<img src="/images/ledStand/LEDStandMain.png" alt="Main Schematic">
+<img src="/images/ledStand/LEDStandMCU.png" alt="MCU Schematic">
+<img src="/images/ledStand/LEDStandPowerSch.png" alt="Power Schematic">
+<img src="/images/ledStand/LEDStandLEDSch.png" alt="Neopixel Schematic">
 
 #### Considerations & Things I Learned
 - Most parts have lots of calculations done out for you, and also example schematics
 
 ### PCB Layout
-Same as schematic screenshots
+
+<img src="/images/ledStand/LEDStandPCB.png" alt="PCB">
 
 #### Considerations & Things I Learned
 - Buck converter layout and routing is very strict, and their datasheet usually provides the best layout
